@@ -62,7 +62,7 @@
 
 
     <!--**********************************
-        Scripts
+        Scriptssdsdsd
     ***********************************-->
     <!-- Required vendors -->
     <script src="./vendor/global/global.min.js"></script>
