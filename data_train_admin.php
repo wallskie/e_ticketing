@@ -56,23 +56,21 @@ if (!$conn) {
                                         </thead>
                                         <tbody>
                                             <?php
-                                                // Assuming a query to fetch data from the database
-                                                $query = "SELECT * FROM trains";
-                                                $result = mysqli_query($conn, $query);
-
-                                                while ($user_data = mysqli_fetch_array($result)) {
-                                                    echo "<tr>";
-                                                    echo "<td><center>" . $user_data['id'] . "</center></td>";
-                                                    echo "<td><center>" . $user_data['code'] . "</center></td>";
-                                                    echo "<td><center>" . $user_data['available_seats'] . "</center></td>";
-                                                    echo "<td><center>" . $user_data['price_per_seat'] . "</center></td>";
-                                                    echo "<td><center>
-                                                            <a href='edit.php?id=" . $user_data['id'] . "' class='btn btn-success'>EDIT</a> |
-                                                            <a href='delete.php?id=" . $user_data['id'] . "' class='btn btn-danger'>DELETE</a>
-                                                        </center></td>";
-                                                    echo "</tr>";
-                                                }
+                                                $no = 0;
+                                                while ($trains = mysqli_fetch_assoc($result)) {
+                                                    $no++;
                                             ?>
+                                                <tr>
+                                                    <th scope="row"><center><?= $no; ?></center></th>
+                                                    <td><center><?php echo $trains['code']; ?></center></td>
+                                                    <td><center><?php echo $trains['available_seats']; ?></center></td>
+                                                    <td><center><?php echo $trains['price_per_seat']; ?></center></td>
+                                                    <td><center>
+                                                        <a href="edit_train_admin.php?id=<?= $trains['id']; ?>" class="btn btn-success">Edit</a> | 
+                                                        <a href="del_train_admin.php?id=<?= $trains['id']; ?>" class="btn btn-danger">Delete</a>
+                                                    </center></td>
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -87,3 +85,5 @@ if (!$conn) {
         </div>
     </body>
 </html>
+<?php
+          include './templates/footer.php';

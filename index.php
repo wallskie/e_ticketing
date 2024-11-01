@@ -18,12 +18,12 @@
     <div class="authincation h-100">
         <div class="container-fluid h-100">
             <div class="row justify-content-center h-100 align-items-center">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <div class="authincation-content">
                         <div class="row no-gutters">
                             <div class="col-xl-12">
                                 <div class="auth-form">
-                                    <h4 class="text-center mb-4">Sign in your account</h4>
+                                    <h3 class="text-center mb-6">Sign in your account</h3>
                                     <form action="proses_login.php" method="post">
                                         <div class="form-group">
                                             <label><strong>Username</strong></label>
@@ -49,12 +49,16 @@
                                         </div>
                                     </form>
                                     <div class="new-account mt-3">
-                                        <p>Don't have an account? <a class="text-primary" href="register.php">Sign up</a></p>
+                                        <p><center>Don't have an account? <a class="text-primary" href="register.php">Sign up</a></center></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <footer style="text-align: center; padding: 20px; background-color: rgba(88, 115, 254, 0.04); margin-top: 20px;">
+                        <p>Copyright © Designed &amp; Developed by <a href="https://bit.ly/4ebIbHr" target="_blank" style="color: blue">waLL Valor</a> 2024</p>
+                        <p>Distributed by <a href="https://themewagon.com/" target="_blank" style="color: blue">Themewagon</a></p>
+                    </footer>
                 </div>
             </div>
         </div>

@@ -48,25 +48,27 @@ if (!$conn) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                    // Assuming a query to fetch data from the database
-                                    $query = "SELECT * FROM trains";
-                                    $result = mysqli_query($conn, $query);
+                            <tbody>
+    <?php
+        // Query to fetch data from the database
+        $query = "SELECT * FROM trains";
+        $result = mysqli_query($conn, $query);
 
-                                    while ($user_data = mysqli_fetch_array($result)) {
-                                        echo "<tr>";
-                                        echo "<td><center>" . $user_data['id'] . "</center></td>";
-                                        echo "<td><center>" . $user_data['code'] . "</center></td>";
-                                        echo "<td><center>" . $user_data['available_seats'] . "</center></td>";
-                                        echo "<td><center>" . $user_data['price_per_seat'] . "</center></td>";
-                                        echo "<td><center>
-                                                <a href='edit.php?id=" . $user_data['id'] . "' class='btn btn-success'>EDIT</a> |
-                                                <a href='delete.php?id=" . $user_data['id'] . "' class='btn btn-danger'>DELETE</a>
-                                            </center></td>";
-                                        echo "</tr>";
-                                    }
-                                ?>
-                            </tbody>
+        while ($trains = mysqli_fetch_array($result)) {
+            echo "<tr>";
+            echo "    <td><center>" . $trains['id'] . "</center></td>";
+            echo "    <td><center>" . $trains['code'] . "</center></td>";
+            echo "    <td><center>" . $trains['available_seats'] . "</center></td>";
+            echo "    <td><center>" . $trains['price_per_seat'] . "</center></td>";
+            echo "    <td><center>";
+            echo "        <a href='edit.php?id=" . $trains['id'] . "' class='btn btn-success'>EDIT</a> | ";
+            echo "        <a href='delete.php?id=" . $trains['id'] . "' class='btn btn-danger'>DELETE</a>";
+            echo "    </center></td>";
+            echo "</tr>";
+        }
+    ?>
+</tbody>
+
                         </table>
                     </div>
                 </div>

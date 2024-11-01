@@ -67,6 +67,10 @@ if (isset($_POST['register'])) {
                             </div>
                         </div>
                     </div>
+                    <footer style="text-align: center; padding: 20px; background-color: rgba(88, 115, 254, 0.04); margin-top: 20px;">
+                        <p>Copyright © Designed &amp; Developed by <a href="https://bit.ly/4ebIbHr" target="_blank" style="color: blue">waLL Valor</a> 2024</p>
+                        <p>Distributed by <a href="https://themewagon.com/" target="_blank" style="color: blue">Themewagon</a></p>
+                    </footer>
                 </div>
             </div>
         </div>
