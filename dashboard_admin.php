@@ -1,10 +1,10 @@
 <?php
 session_start();
 include "koneksi.php";
+include "./templates/header.php";
+include "./templates/navbar.php";
+include "./templates/sidebar.php";
 
-    include "./templates/header.php";
-    include "./templates/navbar.php";
-    include "./templates/sidebar.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

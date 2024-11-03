@@ -64,7 +64,7 @@ if (!$conn) {
                                                     <th scope="row"><center><?= $no; ?></center></th>
                                                     <td><center><?php echo $trains['code']; ?></center></td>
                                                     <td><center><?php echo $trains['available_seats']; ?></center></td>
-                                                    <td><center><?php echo $trains['price_per_seat']; ?></center></td>
+                                                    <td><center>Rp<?php echo $trains['price_per_seat']; ?></center></td>
                                                     <td><center>
                                                         <a href="edit_train_admin.php?id=<?= $trains['id']; ?>" class="btn btn-success">Edit</a> | 
                                                         <a href="del_train_admin.php?id=<?= $trains['id']; ?>" class="btn btn-danger">Delete</a>

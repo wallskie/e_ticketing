@@ -27,11 +27,11 @@
                                     <form action="proses_login.php" method="post">
                                         <div class="form-group">
                                             <label><strong>Username</strong></label>
-                                            <input type="text" class="form-control" value="username" name="username">
+                                            <input class="form-control" id="username" type="text" name="username" placeholder="Enter Username" required />
                                         </div>
                                         <div class="form-group">
                                             <label><strong>Password</strong></label>
-                                            <input type="password" class="form-control" value="password" name="password">
+                                            <input class="form-control" id="password" type="password" name="password" placeholder="Enter Password" required />
                                         </div>
                                         <div class="form-row d-flex justify-content-between mt-4 mb-2">
                                             <div class="form-group">

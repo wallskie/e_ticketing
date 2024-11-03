@@ -71,18 +71,18 @@ if (!$result) {
                                                 $no++;
                                             ?>
                                             <tr>
-                                                <th scope="row"><?= $no; ?></th>
-                                                <td><?php echo $order['user_name']; ?></td>
-                                                <td><?php echo $order['destination_name']; ?></td>
-                                                <td><?php echo date('Y-m-d', strtotime($order['reservation_date'])); ?></td>
-                                                <td>Rp<?php echo number_format($order['price'], 2, ',', '.'); ?></td>
-                                                <td><?php echo $order['status']; ?></td>
-                                                <td>
+                                                <th scope="row"><center><?= $no; ?></center></th>
+                                                <td><center><?php echo $order['user_name']; ?></center></td>
+                                                <td><center><?php echo $order['destination_name']; ?></center></td>
+                                                <td><center><?php echo date('Y-m-d', strtotime($order['reservation_date'])); ?></center></td>
+                                                <td><center>Rp<?php echo number_format($order['price'], 2, ',', '.'); ?></center></td>
+                                                <td><center><?php echo $order['status']; ?></center></td>
+                                                <td><center>
                                                     <form action="admin_confirm.php" method="post">
                                                         <input type="hidden" name="reservation_id" value="<?php echo $order['reservation_id']; ?>">
                                                         <button type="submit" class="btn btn-success">Konfirmasi</button>
                                                     </form>
-                                                </td>
+                                                </center></td>
                                             </tr>
                                             <?php } ?>
                                         </tbody>
