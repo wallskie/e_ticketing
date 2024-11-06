@@ -23,7 +23,7 @@
                         <div class="row no-gutters">
                             <div class="col-xl-12">
                                 <div class="auth-form">
-                                    <h3 class="text-center mb-6">Sign in your account</h3>
+                                    <h3 class="text-center mb-6 ">Sign in your account</h3>
                                     <form action="proses_login.php" method="post">
                                         <div class="form-group">
                                             <label><strong>Username</strong></label>

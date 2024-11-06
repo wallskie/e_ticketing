@@ -52,8 +52,8 @@ if (!$conn) {
                                             <tr>
                                                 <th scope="col"><center>No</center></th>
                                                 <th scope="col"><center>Username</center></th>
-                                                <th scope="col"><center>Status</center></th>
                                                 <th scope="col"><center>Full Name</center></th>
+                                                <th scope="col"><center>Status</center></th>
                                                 <th scope="col"><center>Modification</center></th>
                                             </tr>
                                         </thead>
@@ -68,13 +68,12 @@ if (!$conn) {
                                             <td><center><?php echo $users['username']; ?></center></td>
                                             <td><center><?php echo $users['full_nm']; ?></center></td>
                                             <td><center><?php echo $users['role']; ?></center></td>
-                                            <td><center>
-                                                <a href="admin_edit_user.php?id=<?php echo $users['id']; ?>" class="btn btn-success">Edit</a> | 
-                                                <a href="admin_delete_user.php?id=<?php echo $users['id']; ?>" class="btn btn-danger">Delete</a>
+                                            <td><center> 
+                                                <a href="data_customer_admin.php?delete_id=<?php echo $users['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?');">Delete</a>
                                             </center></td>
                                         </tr>
                                         <?php } ?>
-                                        </tbody>
+                                        </tbody> 
                                     </table>
                                 </div>
                             </div>

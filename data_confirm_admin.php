@@ -1,31 +1,31 @@
 <?php
 session_start();
-include "koneksi.php";
-include "./templates/header.php";
-include "./templates/navbar.php";
-include "./templates/sidebar.php";
+include "koneksi.php"; // Pastikan koneksi ke database
 
-// Fungsi untuk menampilkan booking yang statusnya 'confirmed'
-function displayAllBookings($conn) {
-    $query = "
-        SELECT b.id AS reservation_id, u.full_nm AS user_name, d.destination_name, b.departure_day AS reservation_date, b.total_harga AS price, b.status 
-        FROM bookings b
-        JOIN users u ON b.user_id = u.id
-        JOIN destinations d ON b.destination_id = d.id
-        WHERE b.status = 'confirmed'"; // Filter by status
+  include './templates/header.php';
+  include './templates/navbar.php'; 
+  include './templates/sidebar.php';
 
-    // Menjalankan query
-    $result = mysqli_query($conn, $query);
-
-    // Memeriksa apakah query berhasil
-    if (!$result) {
-        die("Query failed: " . mysqli_error($conn));
-    }
-    return $result;
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    header("Location: index.php");
+    exit();
 }
 
-// Panggil fungsi untuk mendapatkan data bookings
-$result = displayAllBookings($conn);
+// Ambil data pemesanan yang pending
+$result = mysqli_query($conn, "
+    SELECT b.id AS reservation_id, u.full_nm AS user_name, d.destination_name, b.departure_day AS reservation_date, b.total_harga AS price, b.status
+    FROM bookings b
+    JOIN users u ON b.user_id = u.id
+    JOIN schedules s ON s.destination_id = b.destination_id  -- Ubah join sesuai dengan kolom yang ada
+    JOIN destinations d ON s.destination_id = d.id
+    WHERE b.status = 'Pending'
+");
+
+// Periksa apakah query berhasil
+if (!$result) {
+    die("Query failed: " . mysqli_error($conn));
+}
+
 ?>
 
 <!DOCTYPE html>

@@ -6,18 +6,13 @@ include 'koneksi.php';
     include "./templates/navbar.php";
     include "./templates/sidebar.php";
 
-$id = isset($_GET['id']) ? $_GET['id'] : null;
-
-if ($id) {
-    $result = $conn->query("SELECT * FROM trains WHERE id='$id'");
-} else {
-    // Default query if no specific id is provided
-    $result = $conn->query("SELECT * FROM trains");
-}
-
-if (!$conn) {
-    die("Query gagal: " . mysqli_error($conn));
-}
+    if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+        header("Location: ../index.php");
+        exit();
+    }
+    
+    $trains = $conn->query("SELECT * FROM trains");
+    
 ?>
 
 <!DOCTYPE html>
@@ -55,22 +50,25 @@ if (!$conn) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php
-                                                $no = 0;
-                                                while ($trains = mysqli_fetch_assoc($result)) {
-                                                    $no++;
-                                            ?>
+                                        <?php 
+                                            $no= 0;
+                                            while ($train = $trains->fetch_assoc()): 
+                                            $no++;
+                                        ?>
                                                 <tr>
                                                     <th scope="row"><center><?= $no; ?></center></th>
-                                                    <td><center><?php echo $trains['code']; ?></center></td>
-                                                    <td><center><?php echo $trains['available_seats']; ?></center></td>
-                                                    <td><center>Rp<?php echo $trains['price_per_seat']; ?></center></td>
+                                                    <td><center><?php echo $train['code']; ?></center></td>
+                                                    <td><center><?php echo $train['available_seats']; ?></center></td>
+                                                    <td><center><?php echo $train['price_per_seat']; ?></center></td>
                                                     <td><center>
-                                                        <a href="edit_train_admin.php?id=<?= $trains['id']; ?>" class="btn btn-success">Edit</a> | 
-                                                        <a href="del_train_admin.php?id=<?= $trains['id']; ?>" class="btn btn-danger">Delete</a>
+                                                        <a href="edit_train_admin.php?id=<?php echo $train['id']; ?>" class="btn btn-success" style=" margin-right: .4rem;">Edit</a>
+                                                        <form action="del_train.php" method="post" style=" display: inline; ">
+                                                            <input type="hidden" name="delete" value=<?php echo $train['id']; ?>>
+                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are You Sure Want To Delete This?');">Delete</button>
+                                                        </form>
                                                     </center></td>
                                                 </tr>
-                                            <?php } ?>
+                                        <?php endwhile; ?>
                                         </tbody>
                                     </table>
                                 </div>

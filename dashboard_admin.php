@@ -97,7 +97,7 @@ include "./templates/sidebar.php";
                             <div class="stat-widget-two card-body">
                                 <div class="stat-content">
                                     <div class="stat-digit">Payment</div>
-                                    <div><a class="stat-text stretched-link" href="data_payment_admin.php">View Details</a></div>
+                                    <div><a class="stat-text stretched-link" href="data_booking_admin.php">View Details</a></div>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
