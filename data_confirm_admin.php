@@ -92,4 +92,4 @@ if (!$result) {
 
 <?php
 include './templates/footer.php';
-?>
+

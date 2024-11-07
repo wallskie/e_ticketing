@@ -58,7 +58,7 @@ $dest = $conn->query("SELECT * FROM destinations");
                                                     <th scope="row"><center><?= $no; ?></center></th>
                                                     <td><center><?php echo $d['destination_name']; ?></center></td>
                                                     <td><center>
-                                                        <a href="edit_dest.php?id=<?php echo $d['id']; ?>" class="btn btn-success" style=" margin-right: .4rem;">Edit</a>
+                                                        <a href="edit_desti_admin.php?id=<?php echo $d['id']; ?>" class="btn btn-success" style=" margin-right: .4rem;">Edit</a>
                                                         <form action="del_dest.php" method="post" style=" display: inline; ">
                                                             <input type="hidden" name="delete" value=<?php echo $d['id']; ?>>
                                                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are You Sure Want To Delete This?');">Delete</button>
@@ -81,4 +81,4 @@ $dest = $conn->query("SELECT * FROM destinations");
     </body>
 </html>
 <?php
-include '../templates/footer.php';
+    include './templates/footer.php';

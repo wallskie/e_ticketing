@@ -91,7 +91,7 @@ include "./templates/sidebar.php";
                                                 <h3 class="m-b-0">140</h3><span>Follow</span>
                                             </div>
                                             <div class="col">
-                                                <h3 class="m-b-0">0</h3><span>Rost</span>
+                                                <h3 class="m-b-0">0</h3><span>Post</span>
                                             </div>
                                         </div>
                                         <div class="mt-4"><a href="https://bit.ly/4ebIbHr" class="btn btn-primary pl-5 pr-5 mr-3 mb-4">Follow</a> <a href="javascript:void()" class="btn btn-dark pl-5 pr-5 mb-4">Send
