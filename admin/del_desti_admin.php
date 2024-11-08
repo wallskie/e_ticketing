@@ -1,6 +1,6 @@
 <?php
 
-include 'koneksi.php';
+include '../koneksi.php';
 
 // Fungsi Hapus Kereta
 if (isset($_POST['delete'])) {

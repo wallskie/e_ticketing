@@ -1,5 +1,30 @@
+<?php
+session_start();
+include 'koneksi.php';
 
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    // Query untuk memeriksa user
+    $result = $conn->query("SELECT * FROM users WHERE username='$username' AND password='$password'");
+    
+    // Cek jika hasil query ditemukan
+    if ($result && $result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['role'] = $user['role'];
 
+        // Arahkan berdasarkan peran user
+        if ($user['role'] === 'admin') {
+            header("Location:dashboard_admin.php");
+        } else {
+            header("Location:user_dashboard.php");
+        }
+        exit();
+    } 
+}
+?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
@@ -24,24 +49,17 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <h3 class="text-center mb-6 ">Sign in your account</h3>
-                                    <form action="proses_login.php" method="post">
+                                    <form action="" method="post">
                                         <div class="form-group">
                                             <label><strong>Username</strong></label>
-                                            <input class="form-control" id="username" type="text" name="username" placeholder="Enter Username" required />
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="Input Username" required>
                                         </div>
                                         <div class="form-group">
                                             <label><strong>Password</strong></label>
-                                            <input class="form-control" id="password" type="password" name="password" placeholder="Enter Password" required />
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="Input Password" required>
                                         </div>
                                         <div class="form-row d-flex justify-content-between mt-4 mb-2">
                                             <div class="form-group">
-                                                <div class="form-check ml-2">
-                                                    <input class="form-check-input" type="checkbox" id="basic_checkbox_1">
-                                                    <label class="form-check-label" for="basic_checkbox_1">Remember me</label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <a href="page-forgot-password.html">Forgot Password?</a>
                                             </div>
                                         </div>
                                         <div class="text-center">

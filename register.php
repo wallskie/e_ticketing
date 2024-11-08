@@ -46,22 +46,22 @@ if (isset($_POST['register'])) {
                                     <form action="register.php" method="post">
                                         <div class="form-group">
                                             <label><strong>Username</strong></label>
-                                            <input type="text" class="form-control" name="username" placeholde="username">
+                                            <input type="text" class="form-control" name="username" placeholde="Username" required>
                                         </div>
                                         <div class="form-group">
                                             <label><strong>Password</strong></label>
-                                            <input type="password" class="form-control" name="password" placeholder="Password">
+                                            <input type="password" class="form-control" name="password" placeholder="Password" required>
                                         </div>
                                             <div class="form-group">
                                             <label><strong>Nama Lengkap</strong></label>
-                                            <input type="text" class="form-control" name="full_nm" placeholder="Nama Lengkap">
+                                            <input type="text" class="form-control" name="full_nm" placeholder="Nama Lengkap" required>
                                         </div>
                                         <div class="text-center mt-4">
                                             <button type="register" name="register" class="btn btn-primary btn-block">Sign me up</button>
                                         </div>
                                     </form>
                                     <div class="new-account mt-3">
-                                        <p>Already have an account? <a class="text-primary" href="page-login.html">Sign in</a></p>
+                                        <p><center>Already have an account? <a class="text-primary" href="page-login.html">Sign in</a></center></p>
                                     </div>
                                 </div>
                             </div>

@@ -1,21 +1,29 @@
 <?php
 session_start();
-include "koneksi.php"; // Pastikan koneksi ke database
+include '../koneksi.php';
 
-  include './templates/header.php';
-  include './templates/navbar.php'; 
-  include './templates/sidebar.php';
-   
+    include "../templates/header.php";
+    include "../templates/navbar.php";
+    include "../templates/sidebar.php";
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     header("Location: ../index.php");
     exit();
 }
 
-$dest = $conn->query("SELECT * FROM destinations");
+// Fungsi Hapus Keberangkatan
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+    $sql = "DELETE FROM schedules WHERE id=$id";
+    $conn->query($sql);
+    echo "Jadwal keberangkatan berhasil dihapus.";
+}
 
+$schedules = $conn->query("SELECT schedules.*, trains.code AS train_code, destinations.destination_name AS destination_name 
+    FROM schedules 
+    JOIN trains ON schedules.train_id = trains.id 
+    JOIN destinations ON schedules.destination_id = destinations.id");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,9 +32,9 @@ $dest = $conn->query("SELECT * FROM destinations");
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Focus - Bootstrap Admin Dashboard </title>
         <!-- Favicon icon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
         <!-- Custom Stylesheet -->
-        <link href="./css/style.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
     </head>
 
     <body>
@@ -36,8 +44,8 @@ $dest = $conn->query("SELECT * FROM destinations");
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"> Data Destinations</h4>
-                                <button type="button" class="btn btn-rounded btn-info" ><a href="add_desti_admin.php" class="btn-info"><span
+                                <h4 class="card-title">Manage Schedules</h4>
+                                <button type="button" class="btn btn-rounded btn-info" ><a href="add_sched_admin.php" class="btn-info"><span
                                         class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>
                                     </span>Add</a></button>
                             </div>
@@ -47,41 +55,41 @@ $dest = $conn->query("SELECT * FROM destinations");
                                         <thead class="thead-primary">
                                             <tr>
                                                 <th scope="col"><center>No</center></th>
+                                                <th scope="col"><center>Train</center></th>
                                                 <th scope="col"><center>Destinations</center></th>
+                                                <th scope="col"><center>Departure Day</center></th>
                                                 <th scope="col"><center>Modification</center></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php 
+                                        <?php 
                                             $no= 0;
-                                            while ($d = $dest->fetch_assoc()): 
+                                            while ($s = $schedules->fetch_assoc()): 
                                             $no++;
                                             ?>
                                                 <tr>
                                                     <th scope="row"><center><?= $no; ?></center></th>
-                                                    <td><center><?php echo $d['destination_name']; ?></center></td>
+                                                    <td><center><?php echo $s['train_code']; ?></center></td>
+                                                    <td><center><?php echo $s['destination_name']; ?></center></td>
+                                                    <td><center><?php echo $s['departure_day']; ?></center></td>
                                                     <td><center>
-                                                        <a href="edit_desti_admin.php?id=<?php echo $d['id']; ?>" class="btn btn-success" style=" margin-right: .4rem;">Edit</a>
-                                                        <form action="del_desti_admin.php" method="post" style=" display: inline; ">
-                                                            <input type="hidden" name="delete" value=<?php echo $d['id']; ?>>
-                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are You Sure Want To Delete This?');">Delete</button>
-                                                        </form>
+                                                    <a href="?delete=< ?php echo $s['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus jadwal ini?')" class="btn btn-danger">Hapus</a>
                                                     </center></td>
                                                 </tr>
-                                            <?php endwhile; ?>
+                                        <?php endwhile; ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <script src="./vendor/global/global.min.js"></script>
-                    <script src="./js/quixnav-init.js"></script>
-                    <script src="./js/custom.min.js"></script>
+                    <script src="../vendor/global/global.min.js"></script>
+                    <script src="../js/quixnav-init.js"></script>
+                    <script src="../js/custom.min.js"></script>
                 </div>
             </div>
         </div>
     </body>
 </html>
 <?php
-    include './templates/footer.php';
+include "../templates/footer.php";

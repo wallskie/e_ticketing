@@ -1,21 +1,23 @@
 <?php
 session_start();
-include "koneksi.php"; // Pastikan koneksi ke database
+include "../koneksi.php"; // Pastikan koneksi ke database
+
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 
-if (isset($_POST['add_destination'])) {
-    $destination_name = $_POST['destination_name'];
-    $sql = "INSERT INTO destinations (destination_name) VALUES ('$destination_name')";
+if (isset($_POST['add_train'])) {
+    $code = $_POST['code'];
+    $available_seats = $_POST['available_seats'];
+    $price_per_seat = $_POST['price_per_seat'];
+    $sql = "INSERT INTO trains (code, available_seats, price_per_seat) VALUES ('$code', $available_seats, $price_per_seat)";
     $conn->query($sql);
     
-    header("location:data_destination_admin.php");
+    header("location:data_train_admin.php");
     exit();
 }
-    
 
 ?>
 
@@ -28,8 +30,8 @@ if (isset($_POST['add_destination'])) {
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Focus - Bootstrap Admin Dashboard </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
-    <link href="./css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
+    <link href="../css/style.css" rel="stylesheet">
 
 </head>
 
@@ -43,19 +45,26 @@ if (isset($_POST['add_destination'])) {
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <div class="form-group" style="display: flex;align-items: center;">
-                                        <a href="data_train_admin.php" style="background-color: white; font-size: 28px;"><button class="btn-dark" style="background-color: #424d63; border-radius: 50%; width: 50px; height: 50px;"><</button></a>
-                                        <h4 class="text-center" style="margin-top: 12px; margin-left: 29%;">Add Destinations Form</h4>
+                                        <a href="data_train_admin.php" style="background-color: white; font-size: 27px;"><button class="btn-dark" style="background-color: #8e9bb4; border-radius: 50%; width: 50px; height: 50px;">⬅</button></a>
+                                        <h4 class="text-center" style="margin-top: 12px; margin-left: 28%;">Add Train Form</h4>
                                     </div>
                                     <div class="back-button-container">
                                     </div>
                                     <form action="" method="post">
                                         <div class="form-group">
-                                            <label><strong>Destination Name</strong></label>
-                                            <input type="text" class="form-control" id="destination_name" name="destination_name" 
-                                            value="<?php echo isset($des['destination_name']) ? $des['destination_name'] : ''; ?>" placeholder="Input Destination Name" required>
+                                            <label><strong>Trains Code</strong></label>
+                                            <input type="text" class="form-control" id="code" name="code" placeholder="Input Code" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Available Seats</strong></label>
+                                            <input type="number" class="form-control" id="available_seats" name="available_seats"  placeholder="Input Seating" required>
+                                        </div>
+                                            <div class="form-group">
+                                            <label><strong>Price Seats</strong></label>
+                                            <input type="text" class="form-control" id="price_per_seat" name="price_per_seat" placeholder="Input Price" required>
                                         </div>
                                         <div class="text-center mt-4">
-                                            <button type="submit" name="add_destination" class="btn btn-primary btn-block">Add</button>
+                                            <button type="submit" name="add_train" class="btn btn-primary btn-block">Add</button>
                                         </div> 
                                     </form>
                                 </div>
@@ -75,8 +84,8 @@ if (isset($_POST['add_destination'])) {
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="./vendor/global/global.min.js"></script>
-    <script src="./js/quixnav-init.js"></script>
+    <script src="../vendor/global/global.min.js"></script>
+    <script src="../js/quixnav-init.js"></script>
     <!--endRemoveIf(production)-->
 
 </body>

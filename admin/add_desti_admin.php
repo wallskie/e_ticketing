@@ -1,47 +1,22 @@
 <?php
 session_start();
-include "koneksi.php"; // Pastikan koneksi ke database
+include "../koneksi.php"; // Pastikan koneksi ke database
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 
-$des = null; // Inisialisasi $des dengan null agar terhindar dari undefined variable warning.
-
-if (isset($_GET['id'])) {
-    $dest = intval($_GET['id']);
-
-    // Ambil data destinasi untuk diedit
-    $stmt = $conn->prepare("SELECT * FROM destinations WHERE id=?");
-    $stmt->bind_param("i", $dest);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $des = $result->fetch_assoc();
-    } else {
-        die("Destinasi tidak ditemukan.");
-    }
+if (isset($_POST['add_destination'])) {
+    $destination_name = $_POST['destination_name'];
+    $sql = "INSERT INTO destinations (destination_name) VALUES ('$destination_name')";
+    $conn->query($sql);
+    
+    header("location:data_destination_admin.php");
+    exit();
 }
+    
 
-if (isset($_POST['update_dest'])) {
-    $destination_name = strip_tags(trim($_POST['destination_name']));
-
-    // Update data destinasi
-    $stmt = $conn->prepare("UPDATE destinations SET destination_name=? WHERE id=?");
-    $stmt->bind_param("si", $destination_name, $dest);
-
-    if ($stmt->execute()) {
-        $success_message = "Destinasi berhasil diperbarui!";
-    } else {
-        $error_message = "Error: " . $stmt->error;
-    }
-
-    $stmt->close();
-    header("location: data_destination_admin.php");
-    exit(); // Pastikan proses setelah redirect berhenti.
-}
 ?>
 
 <!DOCTYPE html>
@@ -53,9 +28,9 @@ if (isset($_POST['update_dest'])) {
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Focus - Bootstrap Admin Dashboard </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
-    <link href="./css/style.css" rel="stylesheet">
-    
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
+    <link href="../css/style.css" rel="stylesheet">
+
 </head>
 
 <body class="h-100">
@@ -68,22 +43,21 @@ if (isset($_POST['update_dest'])) {
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <div class="form-group" style="display: flex;align-items: center;">
-                                        <a href="data_destination_admin.php" style="background-color: white; font-size: 28px;"><button class="btn-dark" style="background-color: #424d63; border-radius: 50%; width: 50px; height: 50px;"><</button></a>
-                                        <h4 class="text-center" style="margin-top: 12px; margin-left: 29%;">Edit Destinaton form</h4>
+                                        <a href="data_destination_admin.php" style="background-color: white; font-size: 27px;"><button class="btn-dark" style="background-color: #8e9bb4; border-radius: 50%; width: 50px; height: 50px;">⬅</button></a>
+                                        <h4 class="text-center" style="margin-top: 12px; margin-left: 28%;">Add Destinations Form</h4>
                                     </div>
-                                    
-                                    <form method="POST" action="">
+                                    <div class="back-button-container">
+                                    </div>
+                                    <form action="" method="post">
                                         <div class="form-group">
-                                            
                                             <label><strong>Destination Name</strong></label>
                                             <input type="text" class="form-control" id="destination_name" name="destination_name" 
-                                            value="<?php echo isset($des['destination_name']) ? $des['destination_name'] : ''; ?>" required>
+                                            value="<?php echo isset($des['destination_name']) ? $des['destination_name'] : ''; ?>" placeholder="Input Destination Name" required>
                                         </div>
                                         <div class="text-center mt-4">
-                                            <button type="update" name="update_dest" class="btn btn-primary btn-block">Update</button>
+                                            <button type="submit" name="add_destination" class="btn btn-primary btn-block">Add</button>
                                         </div> 
                                     </form>
-                                    
                                 </div>
                             </div>
                         </div>
@@ -101,8 +75,8 @@ if (isset($_POST['update_dest'])) {
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="./vendor/global/global.min.js"></script>
-    <script src="./js/quixnav-init.js"></script>
+    <script src="../vendor/global/global.min.js"></script>
+    <script src="../js/quixnav-init.js"></script>
     <!--endRemoveIf(production)-->
 
 </body>

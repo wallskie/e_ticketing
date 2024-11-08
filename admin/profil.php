@@ -1,7 +1,7 @@
 <?php
-include "./templates/navbar.php";
-include "./templates/header.php";
-include "./templates/sidebar.php";
+include "../templates/navbar.php";
+include "../templates/header.php";
+include "../templates/sidebar.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,8 +13,8 @@ include "./templates/sidebar.php";
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Focus - Bootstrap Admin Dashboard </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
-    <link href="./css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
+    <link href="../css/style.css" rel="stylesheet">
 
 </head>
 
@@ -44,7 +44,7 @@ include "./templates/sidebar.php";
                                 <div class="photo-content">
                                     <div class="cover-photo"></div>
                                     <div class="profile-photo">
-                                        <img src="images/profile/pp.png" class="img-fluid rounded-circle" alt="">
+                                        <img src="../images/profile/pp.png" class="img-fluid rounded-circle" alt="">
                                     </div>
                                 </div>
                                 <div class="profile-info">
@@ -176,9 +176,9 @@ include "./templates/sidebar.php";
             </div>
         </div>
     <!-- Required vendors -->
-    <script src="./vendor/global/global.min.js"></script>
-    <script src="./js/quixnav-init.js"></script>
-    <script src="./js/custom.min.js"></script>
+    <script src="../vendor/global/global.min.js"></script>
+    <script src="../js/quixnav-init.js"></script>
+    <script src="../js/custom.min.js"></script>
     
 
 </body>

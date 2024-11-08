@@ -2,9 +2,9 @@
     Nav header start
 ***********************************-->
 <div class="nav-header">
-    <a href="dashboard_admin.php" class="brand-logo">
-        <img class="logo-abbr" src="./images/pp.png" alt="">
-        <img class="logo-compact" src="./images/text.png" alt="">
+    <a href="../admin/dashboard_admin.php" class="brand-logo">
+        <img class="logo-abbr" src="../images/pp.png" alt="">
+        <img class="logo-compact" src="../images/text.png" alt="">
     </a>
 
     <div class="nav-control">

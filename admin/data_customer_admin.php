@@ -1,23 +1,33 @@
 <?php
 session_start();
-include 'koneksi.php';
+include "../koneksi.php"; // Pastikan koneksi ke database
 
-    include "./templates/header.php";
-    include "./templates/navbar.php";
-    include "./templates/sidebar.php";
+  include '../templates/header.php';
+  include '../templates/navbar.php'; 
+  include '../templates/sidebar.php';
 
-$id = isset($_GET['id']) ? $_GET['id'] : null;
-
-if ($id) {
-    $result = $conn->query("SELECT * FROM users WHERE id='$id'");
-} else {
-    // Default query if no specific id is provided
-    $result = $conn->query("SELECT * FROM users WHERE role = 'user'");
+  if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    header("Location: ../index.php");
+    exit();
 }
 
-if (!$conn) {
-    die("Query gagal: " . mysqli_error($conn));
+// Fungsi Hapus User
+if (isset($_GET['delete_id'])) {
+    $delete_id = intval($_GET['delete_id']);
+    $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
+    $stmt->bind_param("i", $delete_id);
+    if ($stmt->execute()) {
+        echo "<script>alert('User berhasil dihapus');</script>";
+        echo "<script>window.location.href = 'data_customer_admin.php';</script>";
+    } else {
+        echo "<script>alert('Gagal menghapus user');</script>";
+    }
 }
+
+// Ambil data user dengan role customer
+$sql = "SELECT username, full_nm, role FROM users WHERE role = 'user'";
+$result = $conn->query($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -29,11 +39,11 @@ if (!$conn) {
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Focus - Bootstrap Admin Dashboard </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
-    <link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 
 </head>
     <body>
@@ -43,7 +53,7 @@ if (!$conn) {
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Train List</h4>
+                                <h4 class="card-title">Customer List</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -82,10 +92,10 @@ if (!$conn) {
                 </div>
             </div>
         </div>
-        <script src="./vendor/global/global.min.js"></script>
-        <script src="./js/quixnav-init.js"></script>
-        <script src="./js/custom.min.js"></script>
+        <script src="../vendor/global/global.min.js"></script>
+        <script src="../js/quixnav-init.js"></script>
+        <script src="../js/custom.min.js"></script>
     </body>
 </html>
 <?php
-          include './templates/footer.php';
+  include '../templates/footer.php';

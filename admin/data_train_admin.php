@@ -1,10 +1,10 @@
 <?php
 session_start();
-include 'koneksi.php';
+include '../koneksi.php';
 
-    include "./templates/header.php";
-    include "./templates/navbar.php";
-    include "./templates/sidebar.php";
+    include "../templates/header.php";
+    include "../templates/navbar.php";
+    include "../templates/sidebar.php";
 
     if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
         header("Location: ../index.php");
@@ -25,7 +25,7 @@ include 'koneksi.php';
         <!-- Favicon icon -->
         <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
         <!-- Custom Stylesheet -->
-        <link href="./css/style.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
     </head>
 
     <body>
@@ -78,13 +78,13 @@ include 'koneksi.php';
                             </div>
                         </div>
                     </div>
-                    <script src="./vendor/global/global.min.js"></script>
-                    <script src="./js/quixnav-init.js"></script>
-                    <script src="./js/custom.min.js"></script>
+                    <script src="../vendor/global/global.min.js"></script>
+                    <script src="../js/quixnav-init.js"></script>
+                    <script src="../js/custom.min.js"></script>
                 </div>
             </div>
         </div>
     </body>
 </html>
 <?php
-          include './templates/footer.php';
+          include '../templates/footer.php';
