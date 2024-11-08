@@ -49,9 +49,12 @@ if ($result && $trains = mysqli_fetch_array($result)) {
                         <div class="row no-gutters">
                             <div class="col-xl-12">
                                 <div class="auth-form">
+                                    <div class="form-group" style="display: flex;align-items: center;">
+                                        <a href="data_train_admin.php" style="background-color: white; font-size: 28px;"><button class="btn-dark" style="background-color: #424d63; border-radius: 50%; width: 50px; height: 50px;"><</button></a>
+                                        <h4 class="text-center" style="margin-top: 12px; margin-left: 29%;">Update Data Train</h4>
+                                    </div>
                                     <div class="back-button-container">
                                     </div>
-                                    <h4 class="text-center mb-4">Update Data Train</h4>
                                     <form action="dt_train_act_admin.php" method="post">
                                         <div class="form-group">
                                             <label><strong>Trains Code</strong></label>

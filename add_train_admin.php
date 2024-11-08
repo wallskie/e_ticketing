@@ -2,46 +2,23 @@
 session_start();
 include "koneksi.php"; // Pastikan koneksi ke database
 
+
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     header("Location: index.php");
     exit();
 }
 
-$des = null; // Inisialisasi $des dengan null agar terhindar dari undefined variable warning.
-
-if (isset($_GET['id'])) {
-    $dest = intval($_GET['id']);
-
-    // Ambil data destinasi untuk diedit
-    $stmt = $conn->prepare("SELECT * FROM destinations WHERE id=?");
-    $stmt->bind_param("i", $dest);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $des = $result->fetch_assoc();
-    } else {
-        die("Destinasi tidak ditemukan.");
-    }
+if (isset($_POST['add_train'])) {
+    $code = $_POST['code'];
+    $available_seats = $_POST['available_seats'];
+    $price_per_seat = $_POST['price_per_seat'];
+    $sql = "INSERT INTO trains (code, available_seats, price_per_seat) VALUES ('$code', $available_seats, $price_per_seat)";
+    $conn->query($sql);
+    
+    header("location:data_train_admin.php");
+    exit();
 }
 
-if (isset($_POST['update_dest'])) {
-    $destination_name = strip_tags(trim($_POST['destination_name']));
-
-    // Update data destinasi
-    $stmt = $conn->prepare("UPDATE destinations SET destination_name=? WHERE id=?");
-    $stmt->bind_param("si", $destination_name, $dest);
-
-    if ($stmt->execute()) {
-        $success_message = "Destinasi berhasil diperbarui!";
-    } else {
-        $error_message = "Error: " . $stmt->error;
-    }
-
-    $stmt->close();
-    header("location: data_destination_admin.php");
-    exit(); // Pastikan proses setelah redirect berhenti.
-}
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +32,7 @@ if (isset($_POST['update_dest'])) {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
     <link href="./css/style.css" rel="stylesheet">
-    
+
 </head>
 
 <body class="h-100">
@@ -68,22 +45,28 @@ if (isset($_POST['update_dest'])) {
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <div class="form-group" style="display: flex;align-items: center;">
-                                        <a href="data_destination_admin.php" style="background-color: white; font-size: 28px;"><button class="btn-dark" style="background-color: #424d63; border-radius: 50%; width: 50px; height: 50px;"><</button></a>
-                                        <h4 class="text-center" style="margin-top: 12px; margin-left: 29%;">Edit Destinaton form</h4>
+                                        <a href="data_train_admin.php" style="background-color: white; font-size: 28px;"><button class="btn-dark" style="background-color: #424d63; border-radius: 50%; width: 50px; height: 50px;"><</button></a>
+                                        <h4 class="text-center" style="margin-top: 12px; margin-left: 29%;">Add Train Form</h4>
                                     </div>
-                                    
-                                    <form method="POST" action="">
+                                    <div class="back-button-container">
+                                    </div>
+                                    <form action="" method="post">
                                         <div class="form-group">
-                                            
-                                            <label><strong>Destination Name</strong></label>
-                                            <input type="text" class="form-control" id="destination_name" name="destination_name" 
-                                            value="<?php echo isset($des['destination_name']) ? $des['destination_name'] : ''; ?>" required>
+                                            <label><strong>Trains Code</strong></label>
+                                            <input type="text" class="form-control" id="code" name="code" placeholder="Input Code" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Available Seats</strong></label>
+                                            <input type="number" class="form-control" id="available_seats" name="available_seats"  placeholder="Input Seating" required>
+                                        </div>
+                                            <div class="form-group">
+                                            <label><strong>Price Seats</strong></label>
+                                            <input type="text" class="form-control" id="price_per_seat" name="price_per_seat" placeholder="Input Price" required>
                                         </div>
                                         <div class="text-center mt-4">
-                                            <button type="update" name="update_dest" class="btn btn-primary btn-block">Update</button>
+                                            <button type="submit" name="add_train" class="btn btn-primary btn-block">Add</button>
                                         </div> 
                                     </form>
-                                    
                                 </div>
                             </div>
                         </div>

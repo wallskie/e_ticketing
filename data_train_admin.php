@@ -36,6 +36,9 @@ include 'koneksi.php';
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Train List</h4>
+                                <button type="button" class="btn btn-rounded btn-info" ><a href="add_train_admin.php" class="btn-info"><span
+                                        class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>
+                                    </span>Add</a></button>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -62,7 +65,7 @@ include 'koneksi.php';
                                                     <td><center><?php echo $train['price_per_seat']; ?></center></td>
                                                     <td><center>
                                                         <a href="edit_train_admin.php?id=<?php echo $train['id']; ?>" class="btn btn-success" style=" margin-right: .4rem;">Edit</a>
-                                                        <form action="del_train.php" method="post" style=" display: inline; ">
+                                                        <form action="del_train_admin.php" method="post" style=" display: inline; ">
                                                             <input type="hidden" name="delete" value=<?php echo $train['id']; ?>>
                                                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are You Sure Want To Delete This?');">Delete</button>
                                                         </form>
