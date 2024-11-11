@@ -11,7 +11,7 @@
                 </li>
                 <li class="nav-label">Data</li>
                 <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="icon icon-single-copy-06"></i><span class="nav-text">Data Train Woush</span></a>
+                    <i class="icon icon-single-copy-06"></i><span class="nav-text">Data Train OP Valor</span></a>
                     <ul aria-expanded="false">
                         <li><a href="../admin/data_train_admin.php">Data List Train</a></li>
                         <li><a href="../admin/data_destination_admin.php">Data Destinations</a></li>

@@ -201,7 +201,7 @@
                         </li>
                         <li class="nav-label">Data</li>
                         <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon icon-single-copy-06"></i><span class="nav-text">Data Train Woush</span></a>
+                            <i class="icon icon-single-copy-06"></i><span class="nav-text">Data Train OP Valor</span></a>
                             <ul aria-expanded="false">
                                 <li><a href="./admin/data_train_admin.php">Data List Train</a></li>
                                 <li><a href="./admin/data_destination_admin.php">Data Destinations</a></li>
@@ -241,7 +241,7 @@
                             <div class="stat-widget-two card-body">
                                 <div class="stat-content">
                                     <div class="stat-digit">Train Management</div>
-                                    <div><a class="stat-text stretched-link" href="data_train_admin.php">View Details</a></div>
+                                    <div><a class="stat-text stretched-link" href="./admin/data_train_admin.php">View Details</a></div>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-danger w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
@@ -254,7 +254,7 @@
                             <div class="stat-widget-two card-body">
                                 <div class="stat-content">
                                     <div class="stat-digit">Destinations</div>
-                                    <div><a class="stat-text stretched-link" href="data_destination_admin.php">View Details</a></div>
+                                    <div><a class="stat-text stretched-link" href="./admin/data_destination_admin.php">View Details</a></div>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-warning w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
@@ -267,7 +267,7 @@
                             <div class="stat-widget-two card-body">
                                 <div class="stat-content">
                                     <div class="stat-digit">Schedule</div>
-                                    <div><a class="stat-text stretched-link" href="data_schedule_admin.php">View Details</a></div>
+                                    <div><a class="stat-text stretched-link" href="./admin/data_schedule_admin.php">View Details</a></div>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-primary w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
@@ -280,7 +280,7 @@
                             <div class="stat-widget-two card-body">
                                 <div class="stat-content">
                                     <div class="stat-digit">Payment</div>
-                                    <div><a class="stat-text stretched-link" href="data_booking_admin.php">View Details</a></div>
+                                    <div><a class="stat-text stretched-link" href="./admin/data_booking_admin.php">View Details</a></div>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
@@ -303,7 +303,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
+                <p>Copyright © Designed &amp; Developed by <a href="https://bit.ly/4ebIbHr" target="_blank">waLL Valor</a> 2024</p>
                 <p>Distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a></p> 
             </div>
         </div>

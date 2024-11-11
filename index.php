@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
         if ($user['role'] === 'admin') {
             header("Location:dashboard_admin.php");
         } else {
-            header("Location:user_dashboard.php");
+            header("Location:dashboard_user.php");
         }
         exit();
     } 
@@ -49,6 +49,7 @@ if (isset($_POST['login'])) {
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <h3 class="text-center mb-6 ">Sign in your account</h3>
+                                    <h4 class="text-center mb-6 "><a style="color: blue">Train OP</a></h4>
                                     <form action="" method="post">
                                         <div class="form-group">
                                             <label><strong>Username</strong></label>
