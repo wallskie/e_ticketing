@@ -1,271 +1,282 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Stuff Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Focus - Bootstrap Admin Dashboard </title>
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
-    <link rel="stylesheet" href="./vendor/owl-carousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./vendor/owl-carousel/css/owl.theme.default.min.css">
-    <link href="./vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="user/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="user/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="user/css/bootstrap.css">
 
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="user/css/magnific-popup.css">
 
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="user/css/flexslider.css">
 
-</head>
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="user/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="user/css/owl.theme.default.min.css">
 
-<body>
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="user/css/style.css">
 
-    <!--*******************
-        Preloader start
-    ********************-->
-    <div id="preloader">
-        <div class="sk-three-bounce">
-            <div class="sk-child sk-bounce1"></div>
-            <div class="sk-child sk-bounce2"></div>
-            <div class="sk-child sk-bounce3"></div>
-        </div>
-    </div>
-    <!--*******************
-        Preloader end
-    ********************-->
+	<!-- Modernizr JS -->
+	<script src="user/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
 
+	</head>
+	<body>
+		
+	<div class="colorlib-loader"></div>
 
-    <!--**********************************
-        Main wrapper start
-    ***********************************-->
-    <div id="main-wrapper">
-
-        <!--**********************************
-            Nav header start
-        ***********************************-->
-        <div class="nav-header">
-            <a href="dashboard_user.php" class="brand-logo">
-                <img class="logo-abbr" src="./images/pp.png" alt="">
-                <img class="logo-compact" src="./images/text.png" alt="">
-            </a>
-            <style>
-                .nav-header .brand-logo {
-                    display: flex;
-                    align-items: center;
-                    text-decoration: none;
-                }
-                
-                .nav-header .logo-abbr {
-                    width: 100 px;  /* Atur ukuran logo abbreviation */
-                    height: auto;
-                    margin-right: 10px; /* Spasi antara logo abbreviation dan logo compact */
-                }
-                
-                .nav-header .logo-compact {
-                    width: 110px; /* Atur ukuran logo compact */
-                    height: auto;
-                    margin-right: 10px; /* Spasi antara logo compact dan brand title */
-                }
-                
-                .nav-header .brand-logo img {
-                    display: block;
-                    max-width: 100%;
-                    height: auto;
-                }
-            </style>
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
-
-        <!--**********************************
-            Header start
-        ***********************************-->
-        <div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-                            <div class="search_bar dropdown">
-                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-                                    <i class="mdi mdi-magnify"></i>
-                                </span>
-                                <div class="dropdown-menu p-0 m-0">
-                                    <form>
-                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <ul class="navbar-nav header-right">
-                            <li class="nav-item dropdown header-profile">
-                                <a href="logout.php" class="dropdown-item">
-                                    <i class="icon-key"></i>
-                                    <span class="ml-2">Logout </span>
+	<div id="page">
+        <nav class="colorlib-nav" role="navigation">
+            <div class="top-menu">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo Section -->
+                        <div class="col-md-2">
+                            <div id="colorlib-logo">
+                                <a href="dashboard_user.php">
+                                    <strong>OPW Train</strong>
                                 </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!--**********************************
-            Header end ti-comment-alt
-        ***********************************-->
-
-        <!--**********************************
-            Sidebar start
-        ***********************************-->
-        <div>
-            <div class="quixnav">
-                <div class="quixnav-scroll">
-                    <ul class="metismenu" id="menu">
-                        <li class="nav-label">Menu Utama</li>
-                        <li><a class="nav-link" href="dashboard_user.php" aria-expanded="false">
-                            </i><span class="nav-text">HOME</span></a>
-                        </li>
-                        <li class="nav-label">Data</li>
-                        <li><a class="nav-link" href="./user/view_schedule.php" aria-expanded="false">
-                            </i><span class="nav-text">Schedule</span></a>
-                        </li>
-                        <li><a class="nav-link" href="./user/view_trains.php" aria-expanded="false">
-                            </i><span class="nav-text">Trains Available</span></a>
-                        </li>
-                        <li><a class="nav-link" href="./user/view_destinations.php" aria-expanded="false">
-                            </i><span class="nav-text">Destinations List</span></a>
-                        </li>
-                        <li><a class="nav-link" href="./user/booking.php" aria-expanded="false">
-                            </i><span class="nav-text">Booking</span></a>
-                        </li>
-                        <li><a class="nav-link" href="./user/view_orders.php" aria-expanded="false">
-                            </i><span class="nav-text">Transaction</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--**********************************
-            Sidebar end
-        ***********************************-->
-
-        <!--**********************************
-            Content body start
-        ***********************************-->
-        <div class="content-body">
-            <!-- row -->
-            <div class="container-fluid">
-            <div class="row page-titles mx-0">
-                <div class="col-xl-6 col-xxl-12">
-                        <div class="welcome-text">
-                            <h4><center>Train OP Valor</center></h4>
-                            <h3><center>Hi, welcome back user!</center></h3>
+                            </div>
+                        </div>
+                        
+                        <!-- Menu Section -->
+                        <div class="col-md-10 text-right menu-1">
+                            <ul class="nav-list">
+                            <li><a href="dashboard_user.php" class="active"><i class="fas fa-home"></i> Home</a></li>
+                                <li><a href="user/view_schedule.php"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                                <li><a href="user/view_trains.php"><i class="fas fa-train"></i> Available Trains</a></li>
+                                <li><a href="user/view_destinations.php"><i class="fas fa-map-marked-alt"></i> Destination List</a></li>
+                                <li><a href="user/booking.php"><i class="fas fa-ticket-alt"></i> Booking</a></li>
+                                <li><a href="view_orders.php"><i class="fas fa-exchange-alt"></i> Transaction</a></li>
+                                <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li> <!-- Logout Item -->
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-6 col-xxl-12">
+            </div>
+        </nav>
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides">
+					<li style="background-image: url(user/images/background.jpg);">
+						<div class="overlay"></div>
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 col-md-pull-3 col-sm-12 col-xs-12 col-md-offset-3 slider-text">
+									<div class="slider-text-inner">
+										<div class="desc">
+											<p class="meta">
+													<span class="cat"><a href="#">Train</a></span>
+													<span class="date">07 November 2024</span>
+													<span class="pos">By <a href="#">waLL</a></span>
+												</p>
+											<h1>Welcome To OP Woushh Train</h1>
+                                            <h4>We saves your time both while purchasing, the chek-in and during the travel</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+			  	</ul>
+		  	</div>
+		</aside>
 
-                            <div class="card">
-                                <div class="stat-widget-two card-body">
-                                    <div class="stat-content">
-                                        <div class="stat-digit">View Schedules</div>
-                                        <div><a class="stat-text stretched-link" href="./user/view_schedule.php" style="color: blue">View Details</a></div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="stat-widget-two card-body">
-                                    <div class="stat-content">
-                                        <div class="stat-digit">View Available Trains</div>
-                                        <div><a class="stat-text stretched-link" href="./user/view_trains.php" style="color: blue">View Details</a></div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-primary w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /# card -->
-
-                        <!-- /# column -->
-                    </div>
-                </div>
+		<div id="colorlib-container">
+			<div class="container">
+				<div class="row row-pb-md">
+					<div class="col-md-4">
+						<div class="blog-entry">
+							<div class="blog-img">
+								<a href="blog.html"><img src="user/images/blog-1.jpg" class="img-responsive" alt="html5 bootstrap template"></a>
+							</div>
+							<div class="desc">
+								<h2><a href="user/view_schedule.php">Schedule Train <i class="fa-solid fa-hand-point-left"></i></a></h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="blog-entry">
+							<div class="blog-img">
+								<a href="blog.html"><img src="user/images/blog-5.jpg" class="img-responsive" alt="html5 bootstrap template"></a>
+							</div>
+							<div class="desc">
+								<h2><a href="user/booking.php">Booking Seats <i class="fa-solid fa-hand-point-left"></i></a></h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+                    <div class="blog-entry">
+							<div class="blog-img">
+								<a href="user/view_trains.php"><img src="user/images/blog-4.jpg" class="img-responsive" alt="html5 bootstrap template"></a>
+							</div>
+							<div class="desc">
+								<h2><a href="user/view_trains.php">Available Trains <i class="fa-solid fa-hand-point-left"></i></a></h2>
+							</div>
+						</div>
+					</div>
+				</div>
             </div>
         </div>
-        <!--**********************************
-            Content body end
-        ***********************************-->
+        <footer id="colorlib-footer" role="contentinfo">
+			<div class="container">
+				<div class="row row-pb-md">
+					<div class="col-md-3">
+						<h2>Navigational</h2>
+						<p>
+							<ul class="colorlib-footer-links">
+								<li><a href="#"><i class="icon-check"></i> Home</a></li>
+								<li><a href="#"><i class="icon-check"></i> Schedule</a></li>
+								<li><a href="#"><i class="icon-check"></i> Trains Available</a></li>
+								<li><a href="#"><i class="icon-check"></i> Destination List</a></li>
+								<li><a href="#"><i class="icon-check"></i> Booking</a></li>
+								<li><a href="#"><i class="icon-check"></i> Transaction</a></li>
+							</ul>
+						</p>
+					</div>
+					<div class="col-md-3">
+						<h2>Recent Post</h2>
+						<div class="f-blog">
+							<a href="blog.html" class="blog-img" style="background-image: url(user/images/blog-1.jpg);">
+							</a>
+							<div class="desc">
+								<h3><a href="blog.html">Be a designer</a></h3>
+								<p class="admin"><span>25 March 2018</span></p>
+							</div>
+						</div>
+						<div class="f-blog">
+							<a href="blog.html" class="blog-img" style="background-image: url(user/images/blog-5.jpg);">
+							</a>
+							<div class="desc">
+								<h3><a href="blog.html">How to build website</a></h3>
+								<p class="admin"><span>24 March 2018</span></p>
+							</div>
+						</div>
+						<div class="f-blog">
+							<a href="blog.html" class="blog-img" style="background-image: url(user/images/blog-4.jpg);">
+							</a>
+							<div class="desc">
+								<h3><a href="blog.html">Create website</a></h3>
+								<p class="admin"><span>23 March 2018</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<h2>Archive</h2>
+						<p>
+							<ul class="colorlib-footer-links">
+								<li><a href="#"><i class="icon-check"></i> February 2018</a></li>
+								<li><a href="#"><i class="icon-check"></i> January 2018</a></li>
+								<li><a href="#"><i class="icon-check"></i> December 2017</a></li>
+								<li><a href="#"><i class="icon-check"></i> November 2017</a></li>
+								<li><a href="#"><i class="icon-check"></i> October 2017</a></li>
+								<li><a href="#"><i class="icon-check"></i> September 2017</a></li>
+							</ul>
+						</p>
+					</div>
+					<div class="col-md-3">
+						<h2>Tags</h2>
+						<p class="tags">
+							<span><a href="#"><i class="icon-tag"></i> Modeling</a></span>
+							<span><a href="#"><i class="icon-tag"></i> Fashion</a></span>
+							<span><a href="#"><i class="icon-tag"></i> Life</a></span>
+							<span><a href="#"><i class="icon-tag"></i> Blog</a></span>
+							<span><a href="#"><i class="icon-tag"></i> Workout</a></span>
+							<span><a href="#"><i class="icon-tag"></i> Vacation</a></span>
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p>
+							<small class="block"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small> 
+							<small class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
 
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="user/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="user/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="user/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="user/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="user/js/jquery.flexslider-min.js"></script>
+	<!-- Owl carousel -->
+	<script src="user/js/owl.carousel.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="user/js/jquery.magnific-popup.min.js"></script>
+	<script src="user/js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="user/js/main.js"></script>
 
-        <!--**********************************
-            Footer start
-        ***********************************-->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="https://bit.ly/4ebIbHr" target="_blank">waLL Valor</a> 2024</p>
-                <p>Distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a></p> 
-            </div>
-        </div>
-        <!--**********************************
-            Footer end
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button end
-        ***********************************-->
-
-
-    </div>
-    <!--**********************************
-        Main wrapper end
-    ***********************************-->
-
-    <!--**********************************
-        Scripts
-    ***********************************-->
-    <!-- Required vendors -->
-    <script src="./vendor/global/global.min.js"></script>
-    <script src="./js/quixnav-init.js"></script>
-    <script src="./js/custom.min.js"></script>
-
-
-    <!-- Vectormap -->
-    <script src="./vendor/raphael/raphael.min.js"></script>
-    <script src="./vendor/morris/morris.min.js"></script>
-
-
-    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="./vendor/chart.js/Chart.bundle.min.js"></script>
-
-    <script src="./vendor/gaugeJS/dist/gauge.min.js"></script>
-
-    <!--  flot-chart js -->
-    <script src="./vendor/flot/jquery.flot.js"></script>
-    <script src="./vendor/flot/jquery.flot.resize.js"></script>
-
-    <!-- Owl Carousel -->
-    <script src="./vendor/owl-carousel/js/owl.carousel.min.js"></script>
-
-    <!-- Counter Up -->
-    <script src="./vendor/jqvmap/js/jquery.vmap.min.js"></script>
-    <script src="./vendor/jqvmap/js/jquery.vmap.usa.js"></script>
-    <script src="./vendor/jquery.counterup/jquery.counterup.min.js"></script>
-
-
-    <script src="./js/dashboard/dashboard-1.js"></script>
-
-</body>
-
+	</body>
 </html>
+<!-- CSS Styles -->
+<style>
+.colorlib-nav {
+    background-color: #ffffff; /* Ganti background menjadi putih */
+}
+
+#colorlib-logo a {
+    color: #343a40; /* Ganti warna teks logo menjadi gelap agar terlihat di background putih */
+}
+
+.menu-1 .nav-list li a {
+    color: #343a40; /* Ganti warna teks menu menjadi gelap agar kontras dengan background putih */
+}
+
+.menu-1 .nav-list li a:hover {
+    color: #ffffff; /* Ganti warna teks menjadi putih saat dihover */
+    background-color: #343a40; /* Ganti background hover menjadi gelap */
+}
+
+.menu-1 .nav-list li a.active {
+    color: #ffffff; /* Warna teks putih untuk link aktif */
+    background-color: #343a40; /* Background gelap untuk link aktif */
+}
+
+</style>
+
