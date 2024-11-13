@@ -79,7 +79,7 @@ $result = $conn->query($sql);
                                             <td><center><?php echo $users['full_nm']; ?></center></td>
                                             <td><center><?php echo $users['role']; ?></center></td>
                                             <td><center> 
-                                                <a href="data_customer_admin.php?delete_id=<?php echo $users['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?');">Delete</a>
+                                                <a href="data_customer_admin.php?delete_id=<?php echo $users['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')";>Delete</a>
                                             </center></td>
                                         </tr>
                                         <?php } ?>

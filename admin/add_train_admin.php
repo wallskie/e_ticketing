@@ -46,7 +46,7 @@ if (isset($_POST['add_train'])) {
                                 <div class="auth-form">
                                     <div class="form-group" style="display: flex;align-items: center;">
                                         <a href="data_train_admin.php" style="background-color: white; font-size: 27px;"><button class="btn-dark" style="background-color: #8e9bb4; border-radius: 50%; width: 50px; height: 50px;">⬅</button></a>
-                                        <h4 class="text-center" style="margin-top: 12px; margin-left: 28%;">Add Train Form</h4>
+                                        <h4 class="text-center" style="margin-top: 12px; margin-left: 32%;">Add Train Form</h4>
                                     </div>
                                     <div class="back-button-container">
                                     </div>
