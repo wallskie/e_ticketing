@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Stuff Template</title>
+	<title>Home | User</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -101,7 +101,7 @@
 													<span class="pos">By <a href="#">waLL</a></span>
 												</p>
 											<h1>Welcome To OP Woushh Train</h1>
-                                            <h4>We saves your time both while purchasing, the chek-in and during the travel</h4>
+                                            <h4>At OP Woush, we halp you move forward with fast, comfortable, and meaningful travel. Let's reach your destination together!</h4>
 										</div>
 									</div>
 								</div>
@@ -118,7 +118,7 @@
 					<div class="col-md-4">
 						<div class="blog-entry">
 							<div class="blog-img">
-								<a href="blog.html"><img src="user/images/blog-1.jpg" class="img-responsive" alt="html5 bootstrap template"></a>
+								<a href="blog.html"><img src="user/images/img_1.jpg" class="img-responsive" alt="html5 bootstrap template"></a>
 							</div>
 							<div class="desc">
 								<h2><a href="user/view_schedule.php">Schedule Train <i class="fa-solid fa-hand-point-left"></i></a></h2>
@@ -128,7 +128,7 @@
 					<div class="col-md-4">
 						<div class="blog-entry">
 							<div class="blog-img">
-								<a href="blog.html"><img src="user/images/blog-5.jpg" class="img-responsive" alt="html5 bootstrap template"></a>
+								<a href="blog.html"><img src="user/images/img_2.jpg" class="img-responsive" alt="html5 bootstrap template"></a>
 							</div>
 							<div class="desc">
 								<h2><a href="user/booking.php">Booking Seats <i class="fa-solid fa-hand-point-left"></i></a></h2>
@@ -138,7 +138,7 @@
 					<div class="col-md-4">
                     <div class="blog-entry">
 							<div class="blog-img">
-								<a href="user/view_trains.php"><img src="user/images/blog-4.jpg" class="img-responsive" alt="html5 bootstrap template"></a>
+								<a href="user/view_trains.php"><img src="user/images/img_3.jpg" class="img-responsive" alt="html5 bootstrap template"></a>
 							</div>
 							<div class="desc">
 								<h2><a href="user/view_trains.php">Available Trains <i class="fa-solid fa-hand-point-left"></i></a></h2>
@@ -167,27 +167,27 @@
 					<div class="col-md-3">
 						<h2>Recent Post</h2>
 						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(user/images/blog-1.jpg);">
+							<a href="user/view_schedule.php" class="blog-img" style="background-image: url(user/images/img_1.jpg);">
 							</a>
 							<div class="desc">
-								<h3><a href="blog.html">Be a designer</a></h3>
-								<p class="admin"><span>25 March 2018</span></p>
+								<h3><a href="user/view_schedule.php">Schedules Train</a></h3>
+								<p class="admin"><span>25 March 2024</span></p>
 							</div>
 						</div>
 						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(user/images/blog-5.jpg);">
+							<a href="user/booking.php" class="blog-img" style="background-image: url(user/images/img_2.jpg);">
 							</a>
 							<div class="desc">
-								<h3><a href="blog.html">How to build website</a></h3>
-								<p class="admin"><span>24 March 2018</span></p>
+								<h3><a href="user/booking.php">Booking Seats</a></h3>
+								<p class="admin"><span>24 March 2024</span></p>
 							</div>
 						</div>
 						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(user/images/blog-4.jpg);">
+							<a href="user/view_trains.php" class="blog-img" style="background-image: url(user/images/img_3.jpg);">
 							</a>
 							<div class="desc">
-								<h3><a href="blog.html">Create website</a></h3>
-								<p class="admin"><span>23 March 2018</span></p>
+								<h3><a href="user/view_trains.php">Available Trains</a></h3>
+								<p class="admin"><span>23 March 2024</span></p>
 							</div>
 						</div>
 					</div>
